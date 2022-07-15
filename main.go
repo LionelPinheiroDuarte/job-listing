@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"net/http"
 	"log"
+	"os"
 )
 
-type struct jobOffer {
+type jobOffer struct {
 	ID        int           `json:"id"`
 	Company   string        `json:"company"`
 	Logo      string        `json:"logo"`
@@ -21,6 +22,8 @@ type struct jobOffer {
 	Languages []string      `json:"languages"`
 	Tools     []string `json:"tools"`
 }
+
+
 
 func home(w http.ResponseWriter, r *http.Request){
 }
