@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"log"
 	"os"
+	"encoding/json"
 )
 
 type Offer struct {
@@ -24,6 +25,28 @@ type Offer struct {
 }
 
 
+func data(){
+	offerdata, err := os.Open("./data.json")
+	if err != nil{
+		fmt.Println("Error opening the offerdata %s", offerdata)
+	}
+
+	var offerDecoder *json.Decoder = json.NewDecoder(offerdata)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+	var joboffer []Offer
+
+	err = offerDecoder.Decode(&joboffer)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+	for _, offer := range joboffer {
+        fmt.Println("offer name:", offer.Company)
+    }
+}
 
 func home(w http.ResponseWriter, r *http.Request){
 }
