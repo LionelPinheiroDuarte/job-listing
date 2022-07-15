@@ -6,6 +6,22 @@ import (
 	"log"
 )
 
+type struct jobOffer {
+	ID        int           `json:"id"`
+	Company   string        `json:"company"`
+	Logo      string        `json:"logo"`
+	New       bool          `json:"new"`
+	Featured  bool          `json:"featured"`
+	Position  string        `json:"position"`
+	Role      string        `json:"role"`
+	Level     string        `json:"level"`
+	PostedAt  string        `json:"postedAt"`
+	Contract  string        `json:"contract"`
+	Location  string        `json:"location"`
+	Languages []string      `json:"languages"`
+	Tools     []string `json:"tools"`
+}
+
 func home(w http.ResponseWriter, r *http.Request){
 }
 
