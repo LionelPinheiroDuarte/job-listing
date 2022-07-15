@@ -49,6 +49,7 @@ func data(){
 }
 
 func home(w http.ResponseWriter, r *http.Request){
+	data()
 }
 
 func main(){
