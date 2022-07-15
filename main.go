@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-type jobOffer struct {
+type Offer struct {
 	ID        int           `json:"id"`
 	Company   string        `json:"company"`
 	Logo      string        `json:"logo"`
