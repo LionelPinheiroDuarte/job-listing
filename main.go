@@ -42,29 +42,20 @@ func data()(joboffers []Offer){
         log.Fatal(err)
     }
 
-	var joboffer []Offer
-
-	err = offerDecoder.Decode(&joboffer)
+	err = offerDecoder.Decode(&joboffers)
     if err != nil {
         log.Fatal(err)
     }
 
-	for _, offer := range joboffer {
-        fmt.Println("offer name:", offer.Company)
-    }
+	return joboffers
 }
-
-//Page variables
-type PageVariables struct{
-	PageTitle string
-	PageOffers []Offer
-}
-var offers []Offer
 
 func getOffers(w http.ResponseWriter, r *http.Request){
+	
+	joboffers := data()
 	pageVariables := PageVariables{
 		PageTitle: "JobOfferslist",
-		PageOffers: offers,
+		PageOffers: joboffers,
 	}
 
 	t, err := template.ParseFiles("index.html")
