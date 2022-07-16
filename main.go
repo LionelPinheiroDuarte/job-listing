@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"encoding/json"
+	"html/template"
 )
 
 type Offer struct {
