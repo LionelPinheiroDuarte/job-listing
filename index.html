@@ -32,11 +32,15 @@
                     </div>
                 </div>
                 <div>
-                    <ul>
-                        {{range .Languages and .Tools}}
-                        <li>{{.}}</li>
+                    <div>
+                        <span>{{.Level}}</span>
+                        {{range .Tools}}
+                            <span>{{.}}</span>
                         {{end}}
-                    </ul>
+                        {{range .Languages}}
+                            <span>{{.}}</span>
+                        {{end}}
+                    </div>
                 </div>
             </div>
             {{end}}
