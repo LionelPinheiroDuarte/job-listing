@@ -12,7 +12,33 @@
         {{else}} -->
         <h1>{{.PageTitle}}</h1>
             {{range .PageOffers}}
-                <h2>{{.Role}}</h2>
+            <div>
+                <img src="{{.Logo}}" alt="">
+                <div>
+                    <div>
+                        <p>{{.Company}}</p>
+                        {{if .New}}
+                            <p>New</p>
+                        {{end}}
+                        {{if .Featured}}
+                            <p>Featured</p>
+                        {{end}}
+                    </div>
+                    <h2>{{.Position}}</h2>
+                    <div>
+                        <span>{{.PostedAt}}</span>
+                        <span>{{.Contract}}</span>
+                        <span>{{.Location}}</span>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        {{range .Languages and .Tools}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
             {{end}}
         <!-- {{end}} -->
     </body>
