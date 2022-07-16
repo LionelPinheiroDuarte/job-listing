@@ -25,7 +25,6 @@ type Offer struct {
 	Tools     []string `json:"tools"`
 }
 
-
 func data(){
 	offerdata, err := os.Open("./data.json")
 	if err != nil{
@@ -47,6 +46,29 @@ func data(){
 	for _, offer := range joboffer {
         fmt.Println("offer name:", offer.Company)
     }
+}
+
+//Page variables
+type PageVariables struct{
+	PageTitle string
+	PageOffers []Offer
+}
+var offers []Offer
+
+func getOffers(w http.ResponseWriter, r *http.Request){
+	pageVariables := PageVariables{
+		PageTitle: "JobOfferslist",
+		PageOffers: offers,
+	}
+
+	t, err := template.ParseFiles("index.html")
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		log.Print("template parsing error:", err)
+	}
+
+	err = t.Execute(w, pageVariables)
 }
 
 func home(w http.ResponseWriter, r *http.Request){
