@@ -25,7 +25,7 @@ type Offer struct {
 	Tools     []string `json:"tools"`
 }
 
-func data(){
+func data()(joboffers []Offer){
 	offerdata, err := os.Open("./data.json")
 	if err != nil{
 		fmt.Println("Error opening the offerdata %s", offerdata)
