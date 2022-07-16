@@ -24,6 +24,12 @@ type Offer struct {
 	Languages []string      `json:"languages"`
 	Tools     []string `json:"tools"`
 }
+//Page variables
+type PageVariables struct{
+	PageTitle string
+	PageOffers []Offer
+}
+
 
 func data()(joboffers []Offer){
 	offerdata, err := os.Open("./data.json")
