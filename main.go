@@ -74,6 +74,7 @@ func home(w http.ResponseWriter, r *http.Request){
 
 func main(){
 	http.HandleFunc("/", getOffers)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Println("Server is running on port: 8000")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
