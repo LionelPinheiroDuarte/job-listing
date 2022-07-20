@@ -113,3 +113,8 @@ header img{
     text-transform: uppercase;
     color: var(--clr-neutral-100);
 }
+
+.info:not(:last-child)::after{
+    content: "\00B7";
+    margin-inline: 0.5rem;
+}
