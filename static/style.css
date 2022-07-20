@@ -85,11 +85,15 @@
 
 body{
     font-family: var(--ff-primary);
-    width: 1440px;
-    margin-inline: auto;
     background-color: var(--clr-neutral-100);
 }
-
+header img{
+    width: 100%;
+}
+.container{
+    width: 1440px;
+    margin-inline: auto;
+}
 .card{
     padding: 1rem;
     background-color: #fff;
