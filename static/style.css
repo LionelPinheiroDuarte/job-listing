@@ -86,6 +86,13 @@
 body{
     font-family: var(--ff-primary);
 }
+
+.card{
+    padding: 1rem;
+    background-color: #fff;
+    width: max-content;
+}
+
 .badge-bg-primary-400{
     background-color: var(--clr-primary-400);
 }
