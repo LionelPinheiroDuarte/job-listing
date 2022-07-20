@@ -86,3 +86,16 @@
 body{
     font-family: var(--ff-primary);
 }
+.badge-bg-primary-400{
+    background-color: var(--clr-primary-400);
+}
+.badge-bg-accent-700{
+    background-color: var(--clr-accent-700);
+}
+.badge {
+    width: max-content;
+    border-radius: 100px;
+    padding: 0.25rem 0.25rem;
+    text-transform: uppercase;
+    color: var(--clr-neutral-100);
+}
