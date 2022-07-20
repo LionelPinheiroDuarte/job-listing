@@ -85,6 +85,9 @@
 
 body{
     font-family: var(--ff-primary);
+    width: 1440px;
+    margin-inline: auto;
+    background-color: var(--clr-neutral-100);
 }
 
 .card{
