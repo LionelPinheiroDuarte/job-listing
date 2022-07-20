@@ -7,9 +7,10 @@
         <link rel="stylesheet" type="text/css" href="/static/style.css" >
     </head>
     <body>
-        <!-- {{if not .PageOffers}}
-        <p>No Offers</p>
-        {{else}} -->
+        <header>
+            <img src="./static/images/bg-header-desktop.svg" alt="">
+        </header>
+        <section class="container">
             {{range .PageOffers}}
             <div class="card">
                 <img src="{{.Logo}}" alt="">
