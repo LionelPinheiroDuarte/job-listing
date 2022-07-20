@@ -12,38 +12,38 @@
         </header>
         <section class="container">
             {{range .PageOffers}}
-            <div class="card">
-                <img src="{{.Logo}}" alt="">
-                <div>
+                <div class="card">
+                    <img src="{{.Logo}}" alt="">
                     <div>
-                        <p class="text-primary-400 fw-semibold">{{.Company}}</p>
-                        {{if .New}}
-                            <p class="badge | badge-bg-primary-400 fw-semibold">New!</p>
-                        {{end}}
-                        {{if .Featured}}
-                            <p class="badge | badge-bg-accent-700 fw-semibold">Featured</p>
-                        {{end}}
+                        <div>
+                            <p class="text-primary-400 fw-semibold">{{.Company}}</p>
+                            {{if .New}}
+                                <p class="badge | badge-bg-primary-400 fw-semibold">New!</p>
+                            {{end}}
+                            {{if .Featured}}
+                                <p class="badge | badge-bg-accent-700 fw-semibold">Featured</p>
+                            {{end}}
+                        </div>
+                        <h2 class="fw-semibold text-accent-700">{{.Position}}</h2>
+                        <div>
+                            <span class="text-accent-400">{{.PostedAt}}</span>
+                            <span class="text-accent-400">{{.Contract}}</span>
+                            <span class="text-accent-400">{{.Location}}</span>
+                        </div>
                     </div>
-                    <h2 class="fw-semibold text-accent-700">{{.Position}}</h2>
                     <div>
-                        <span class="text-accent-400">{{.PostedAt}}</span>
-                        <span class="text-accent-400">{{.Contract}}</span>
-                        <span class="text-accent-400">{{.Location}}</span>
+                        <div>
+                            <span>{{.Level}}</span>
+                            {{range .Tools}}
+                                <span>{{.}}</span>
+                            {{end}}
+                            {{range .Languages}}
+                                <span>{{.}}</span>
+                            {{end}}
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <span>{{.Level}}</span>
-                        {{range .Tools}}
-                            <span>{{.}}</span>
-                        {{end}}
-                        {{range .Languages}}
-                            <span>{{.}}</span>
-                        {{end}}
-                    </div>
-                </div>
-            </div>
             {{end}}
-        <!-- {{end}} -->
+        </section>
     </body>
 </html>
