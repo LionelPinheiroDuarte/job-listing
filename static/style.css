@@ -32,7 +32,7 @@
      --fs-primary: 1rem;
 
      --fw-regular: 500;
-     --fw-semi-bold: 700;
+     --fw-semibold: 700;
 
 
 }
@@ -58,8 +58,8 @@
 .fw-regular {
     font-weight: var(--fw-regular);
 }
-.fw-bold {
-    font-weight: var(--fw-bold);
+.fw-semibold {
+    font-weight: var(--fw-semibold);
 }
 
 .bg-primary-400{
