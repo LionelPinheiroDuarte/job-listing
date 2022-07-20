@@ -21,15 +21,55 @@
 
     --clr-neutral-100: hsl(180, 52%, 96%);
     --clr-neutral-200: hsl(180, 31%, 95%);
-    --clr-neutral-800: hsl(180, 8%, 52%);
-    --clr-neutral-900: hsl(180, 14%, 20%);
+    
+    --clr-accent-400: hsl(180, 8%, 52%);
+    --clr-accent-700: hsl(180, 14%, 20%);
 
      /* Fonts */
 
      --ff-primary: "Leauge Spartan", sans-serif;
 
-     /* Fonts Size */
+     --fs-primary: 1rem;
 
-     --fs-primary: 1rem
+     --fw-regular: 500;
+     --fw-semi-bold: 700;
 
+
+}
+
+/* Utility classes*/
+
+.text-primary-400{
+    color: var(--clr-primary-400);
+}
+
+.text-neutral-100{
+    color: var(--clr-neutral-100);
+}
+
+.text-accent-200{
+    color: var(--clr-neutral-200);
+}
+
+.text-accent-700{
+    color: var(--clr-accent-700);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.bg-primary-400{
+    background-color: var(--clr-primary-400);
+}
+
+.bg-accent-400{
+    background-color: var(--clr-accent-400);
+}
+
+.bg-neutral-100{
+    background-color: var(--clr-neutal-100);
 }
