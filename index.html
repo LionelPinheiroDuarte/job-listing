@@ -12,11 +12,11 @@
         {{else}} -->
         <h1>{{.PageTitle}}</h1>
             {{range .PageOffers}}
-            <div>
+            <div class="bg-neutral-100">
                 <img src="{{.Logo}}" alt="">
                 <div>
                     <div>
-                        <p>{{.Company}}</p>
+                        <p class="text-primary-400 fw-semibold">{{.Company}}</p>
                         {{if .New}}
                             <p>New</p>
                         {{end}}
@@ -24,11 +24,11 @@
                             <p>Featured</p>
                         {{end}}
                     </div>
-                    <h2>{{.Position}}</h2>
+                    <h2 class="fw-semibold text-accent-700">{{.Position}}</h2>
                     <div>
-                        <span>{{.PostedAt}}</span>
-                        <span>{{.Contract}}</span>
-                        <span>{{.Location}}</span>
+                        <span class="text-accent-400">{{.PostedAt}}</span>
+                        <span class="text-accent-400">{{.Contract}}</span>
+                        <span class="text-accent-400">{{.Location}}</span>
                     </div>
                 </div>
                 <div>
