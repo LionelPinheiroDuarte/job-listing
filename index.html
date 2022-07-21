@@ -17,12 +17,15 @@
                     <div>
                         <div>
                             <p class="text-primary-400 fw-semibold">{{.Company}}</p>
+                            <div> 
                             {{if .New}}
-                                <p class="badge | badge-bg-primary-400 fw-semibold">New!</p>
+                                <span class="badge | badge-bg-primary-400 fw-semibold">New!</span>
                             {{end}}
                             {{if .Featured}}
-                                <p class="badge | badge-bg-accent-700 fw-semibold">Featured</p>
+                                <span class="badge | badge-bg-accent-700 fw-semibold">Featured</span>
                             {{end}}
+                            </div>
+                                
                         </div>
                         <h2 class="fw-semibold text-accent-700">{{.Position}}</h2>
                         <div>
