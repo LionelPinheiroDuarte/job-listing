@@ -107,12 +107,13 @@ header img{
 }
 .card{
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    grid-column-gap: 1rem;
-    padding: 1rem;
-    background-color: #fff;
     width: 90%;
     line-height: 1.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    grid-template-columns: auto 1fr 1fr;
+    grid-column-gap: 1rem;
+    background-color: #fff;
 }
 .badge-bg-primary-400{
     background-color: var(--clr-primary-400);
