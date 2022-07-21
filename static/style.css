@@ -95,11 +95,13 @@ header img{
     margin-inline: auto;
 }
 .card{
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-column-gap: 1rem;
     padding: 1rem;
     background-color: #fff;
-    width: max-content;
+    width: 90%;
 }
-
 .badge-bg-primary-400{
     background-color: var(--clr-primary-400);
 }
@@ -113,7 +115,6 @@ header img{
     text-transform: uppercase;
     color: var(--clr-neutral-100);
 }
-
 .info:not(:last-child)::after{
     content: "\00B7";
     margin-inline: 0.5rem;
