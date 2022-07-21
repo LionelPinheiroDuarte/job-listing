@@ -107,6 +107,7 @@ header img{
     padding: 1rem;
     background-color: #fff;
     width: 90%;
+    line-height: 1.8rem;
 }
 .badge-bg-primary-400{
     background-color: var(--clr-primary-400);
