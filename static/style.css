@@ -81,6 +81,10 @@
     background-color: var(--clr-neutal-200);
 }
 
+.flex{
+    display: flex;
+}
+
 /* Components */
 
 body{
