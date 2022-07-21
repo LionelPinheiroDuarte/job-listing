@@ -34,13 +34,13 @@
                             <span class="info | text-accent-400">{{.Location}}</span>
                         </div>
                     </div>
-                    <div>
-                        <span>{{.Level}}</span>
+                    <div class="requirements">
+                        <span class="fw-semibold text-primary-400 bg-accent-400">{{.Level}}</span>
                         {{range .Tools}}
-                            <span>{{.}}</span>
+                            <span class="fw-semibold text-primary-400 bg-accent-400">{{.}}</span>
                         {{end}}
                         {{range .Languages}}
-                            <span>{{.}}</span>
+                            <span class="fw-semibold text-primary-400 bg-accent-400">{{.}}</span>
                         {{end}}
                     </div>
                 </div>

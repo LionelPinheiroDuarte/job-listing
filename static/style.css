@@ -71,9 +71,11 @@
 .bg-primary-400{
     background-color: var(--clr-primary-400);
 }
-
 .bg-accent-400{
     background-color: var(--clr-accent-400);
+}
+.bg-accent-700{
+    background-color: var(--clr-accent-700);
 }
 
 .bg-neutral-100{
@@ -125,4 +127,7 @@ header img{
 .info:not(:last-child)::after{
     content: "\00B7";
     margin-inline: 0.5rem;
+}
+.requirements span{
+    padding: 0.25rem 0.5rem;
 }
