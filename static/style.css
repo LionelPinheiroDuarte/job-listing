@@ -98,6 +98,9 @@ body{
     font-family: var(--ff-primary);
     background-color: var(--clr-neutral-100);
 }
+header{
+    margin-bottom: 3rem;
+}
 header img{
     width: 100%;
 }
