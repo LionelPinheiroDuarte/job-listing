@@ -65,7 +65,9 @@
 .fw-semibold {
     font-weight: var(--fw-semibold);
 }
-
+.fs-400{
+    font-size: 1rem;
+}
 .bg-primary-400{
     background-color: var(--clr-primary-400);
 }
