@@ -110,7 +110,6 @@ header img{
 }
 .card{
     display: grid;
-    width: 90%;
     line-height: 1.8rem;
     margin-bottom: 1rem;
     padding: 1rem;
