@@ -128,6 +128,11 @@ header img{
     content: "\00B7";
     margin-inline: 0.5rem;
 }
+.requirements{
+    align-items: center;
+    justify-content: flex-end;
+}
 .requirements span{
+    height: max-content ;
     padding: 0.25rem 0.5rem;
 }
