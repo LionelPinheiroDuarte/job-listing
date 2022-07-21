@@ -65,6 +65,9 @@
 .fw-semibold {
     font-weight: var(--fw-semibold);
 }
+.fs-300{
+    font-size: 0.8rem;
+}
 .fs-400{
     font-size: 1rem;
 }
