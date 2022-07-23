@@ -104,6 +104,12 @@ header{
 header img{
     width: 100%;
 }
+
+hr{
+    width: 100%;
+    height: 1px;
+    color: var(--clr-neutral-200);
+}
 .container{
     width: 1440px;
     margin-inline: auto;
