@@ -136,6 +136,9 @@ header img{
         border: 1px solid red;
         width: 50px;
     }
+    .information{
+        line-height: 2rem;
+    }
     .requirements{
         flex-wrap: nowrap;
     }
