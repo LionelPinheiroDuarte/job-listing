@@ -139,7 +139,6 @@ hr{
     .card img{
         position: relative;
         bottom: 25px;
-        border: 1px solid red;
         width: 50px;
     }
     .information{
