@@ -14,7 +14,7 @@
             {{range .PageOffers}}
                 <div class="card">
                     <img src="{{.Logo}}" alt="">
-                    <div>
+                    <div class="information">
                         <div class="flex">
                             <p class="text-primary-400 fw-semibold">{{.Company}}</p>
                             <div> 
@@ -24,8 +24,7 @@
                             {{if .Featured}}
                                 <span class="badge | badge-bg-accent-700 fw-semibold fs-300">Featured</span>
                             {{end}}
-                            </div>
-                                
+                            </div>  
                         </div>
                         <h2 class="fw-semibold text-accent-700 fs-400">{{.Position}}</h2>
                         <div>
