@@ -111,7 +111,6 @@ hr{
     color: var(--clr-neutral-200);
 }
 .container{
-    width: 1440px;
     margin-inline: auto;
 }
 
