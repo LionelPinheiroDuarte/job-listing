@@ -139,6 +139,9 @@ hr{
         bottom: 25px;
         width: 50px;
     }
+    .logo{
+        height: 2rem;
+    }
     .information{
         line-height: 2rem;
     }
