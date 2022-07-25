@@ -114,11 +114,7 @@ hr{
     margin-inline: auto;
 }
 
-.logo{
-    height: 2rem;
-}
-
-@media (min-width: 375px) { 
+@media (min-width: 320px) { 
     .container{
         width: max-content;
         margin:auto;
@@ -151,7 +147,35 @@ hr{
     .information{
         line-height: 2rem;
     }
- }
+}
+
+@media (min-width: 768px){
+    .card{
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        grid-column-gap: 1rem;
+        line-height: 1.8rem;
+        width: 700px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .card img{
+        width: fit-content;
+        position: inherit;
+    }
+    hr{
+        display: none;
+    }
+    .logo{
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px){
+    .card{
+        width: 900px;
+    }
+}
 
 .badge-bg-primary-400{
     background-color: var(--clr-primary-400);
@@ -183,10 +207,15 @@ hr{
     .requirements{
         justify-content: left;
     }
-    .requirements::before{
-        content:"";
-        width: 100%;
-        height: 1px;
-        color: red;
+ }
+
+
+ @media (min-width: 768px) {
+    .requirements{
+        align-items: center;
+        justify-content: right;
+    }
+    .requirements span{
+        height: fit-content;
     }
  }
