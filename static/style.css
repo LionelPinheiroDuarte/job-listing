@@ -151,7 +151,7 @@ hr{
     background-color: #fff;
 }
 
-.card:hover,:active{
+.card:hover{
     border-left: 5px solid var(--clr-primary-400);
     border-radius: 5px 0 0 5px;
     cursor: pointer;
