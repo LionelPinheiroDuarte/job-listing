@@ -118,6 +118,7 @@ hr{
     .container{
         width: max-content;
         margin:auto;
+        padding-inline: inherit;
     }
  }
 

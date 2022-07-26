@@ -8,7 +8,13 @@
     </head>
     <body>
         <header>
-            <img src="./static/images/bg-header-desktop.svg" alt="">
+            <picture>
+                <picture>
+                    <source media="(max-width:375px)" srcset="./static/images/bg-header-mobile.svg" alt="small">
+                    <source media="(min-width:375px)" srcset="./static/images/bg-header-desktop.svg" alt="big">
+                    <img src="./static/images/bg-header-desktop.svg" alt="">
+                  </picture>
+            </picture>  
         </header>
         <section class="container">
             {{range .PageOffers}}
