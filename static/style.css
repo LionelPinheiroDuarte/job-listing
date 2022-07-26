@@ -110,6 +110,30 @@ hr{
     height: 1px;
     color: var(--clr-neutral-200);
 }
+.filter{
+    display: flex;
+    position: relative;
+    bottom: 68px;
+    width: 21rem;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0.5rem;
+    background-color: rgb(255 255 255);
+}
+.filter > input, button{
+    border: none;
+}
+.filter > input {
+    flex-grow: 2;
+}
+.filter > input[type=text]:focus {
+    outline: none
+}
+.filter > button {
+    background-color: inherit;
+    cursor: pointer;
+}
+
 .container{
     margin-inline: auto;
 }
