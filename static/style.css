@@ -5,13 +5,11 @@
     src: url("./fonts/LeagueSpartan-Medium.ttf") format("truetype");
     font-weight: 500;
 }
-  
 @font-face {
     font-family: "League Spartan";
     src: url("./fonts/LeagueSpartan-SemiBold.ttf") format("truetype");
     font-weight: 700;
 }
-  
 
 :root{  
 
@@ -33,7 +31,6 @@
 
      --fw-regular: 500;
      --fw-semibold: 700;
-
 
 }
 
@@ -126,7 +123,10 @@ hr{
     padding: 1rem;
     background-color: #fff;
 }
-
+.jobtitle:hover{
+  color: var(--clr-primary-400);
+  cursor: pointer;
+}
 @media (min-width: 320px) { 
     .card{
         display: flex;
