@@ -1,0 +1,193 @@
+
+#+TITLE: Devops Project - Week 01
+#+DATE: [2025-08-18 Mon]
+#+AUTHOR: Lionel Pinheiro Duarte
+#+STARTUP: overview
+
+
+* 🎯 Week Objectives
+** Technical Goals
+- [ ] Complete development environment configuration
+- [ ] Setup Git workflow with branches and tags
+- [ ] Containerization with Docker
+- [ ] Project documentation with DevOps standards
+
+** Learning Goals  
+- [ ] Master advanced Git commands (tags, workflow)
+- [ ] Understand Literate DevOps principles
+- [ ] Establish tracking method and metrics
+
+
+* 📅 Daily Journal
+
+** Monday 18/08 - Day 1
+*** ✅ Achievements
+- AWS CLI configuration 
+- Git structure creation (main/dev/stage/doc branches)
+- CLAUDE.md setup for DevOps assistance
+- Weekly learning log initialization
+
+*** 🧠 Learning Points
+- Difference between Claude Web Pro and Claude Code API
+- Git tagging strategy with semantic versioning
+- Technical documentation structure in English
+
+*** 🔧 Important Commands Discovered
+#+BEGIN_SRC bash
+# Git tags configuration
+git tag -a v0.1.0 -m "Initial setup message"
+git push origin v0.1.0
+
+# AWS CLI verification
+aws sts get-caller-identity
+#+END_SRC
+
+*** 🤔 Questions/Challenges
+- AWS CLI authentication error (resolved with https://www.youtube.com/watch?v=vZXpmgAs91s)
+- Optimal structure for DevOps documentation
+
+*** 📊 Day 1 Metrics
+- Setup time: _120__ minutes
+- Git commits: _1__
+- Documentation pages: _2__
+
+** Tuesday 19/08 - Day 2
+*** 🎯 Daily Objectives
+- 
+- 
+- 
+
+*** ✅ Achievements
+- 
+- 
+
+*** 🧠 Learning Points
+- 
+- 
+
+*** 🔧 Important Commands
+#+BEGIN_SRC bash
+# To fill
+#+END_SRC
+
+*** 🤔 Questions/Challenges
+- 
+
+*** 📊 Metrics
+- 
+
+** Wednesday 20/08 - Day 3
+*** 🎯 Daily Objectives
+- 
+- 
+
+*** ✅ Achievements
+- 
+
+*** 🧠 Learning Points
+- 
+
+*** 🔧 Important Commands
+#+BEGIN_SRC bash
+# To fill
+#+END_SRC
+
+*** 🤔 Questions/Challenges
+- 
+
+*** 📊 Metrics
+- 
+
+** Thursday 21/08 - Day 4
+*** 🎯 Daily Objectives
+- 
+- 
+
+*** ✅ Achievements
+- 
+
+*** 🧠 Learning Points
+- 
+
+*** 🔧 Important Commands
+#+BEGIN_SRC bash
+# To fill
+#+END_SRC
+
+*** 🤔 Questions/Challenges
+- 
+
+*** 📊 Metrics
+- 
+
+** Friday 22/08 - Day 5
+*** 🎯 Daily Objectives
+- Create week diagrams
+- Update README
+- Weekly review
+
+*** ✅ Achievements
+- 
+
+*** 🧠 Learning Points
+- 
+
+*** 🔧 Important Commands
+#+BEGIN_SRC bash
+# To fill
+#+END_SRC
+
+*** 🤔 Questions/Challenges
+- 
+
+*** 📊 Final Week Metrics
+- Total commits: ___
+- Lines of code: ___
+- Tests created: ___
+- Documentation: ___ pages
+
+* 📊 Weekly Metrics
+
+** Week 1 Baseline (Before)
+| Metric | Value | Notes |
+|--------|-------|-------|
+| Build time | Manual ∞ | No automation |
+| Deploy time | N/A | No deployment |
+| Test coverage | 0% | No tests |
+| Documentation | 0 pages | Empty project |
+
+** Week 1 Targets (After)
+| Metric | Target | Status |
+|--------|--------|--------|
+| Git workflow | ✅ Setup | |
+| Docker setup | ✅ Basic | |
+| Documentation | 3-5 pages | |
+| Learning log | 1 week | |
+
+* 🎓 Weekly Review
+
+** 🏆 Week Successes
+- 
+- 
+- 
+
+** 🔧 Challenges Encountered
+- 
+- 
+- 
+
+** 📚 Sources Consulted
+*** Official Documentation
+- AWS CLI docs: https://docs.aws.amazon.com/cli/
+- Git documentation: https://git-scm.com/docs
+- Docker docs: https://docs.docker.com/
+
+*** Additional Resources
+- 
+- 
+
+** 🎯 Next Week Objectives
+- [ ] 
+- [ ] 
+- [ ] 
+
