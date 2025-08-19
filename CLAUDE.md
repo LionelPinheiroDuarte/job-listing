@@ -118,7 +118,7 @@ Acceptable alternatives (in order):
 
 ## Metrics & Performance Tracking
 ### Before/After Measurements
-Track these key metrics throughout bootcamp:
+Track these key metrics throughout the project:
 
 **Build Performance**
 - Build time (baseline: manual, target: <3min automated)
@@ -211,4 +211,3 @@ Before any major milestone:
 - **Corrections**: Provide English feedback in structured format shown above
 
 ---
-*This configuration enables optimal Claude Code assistance for the DevOps bootcamp journey. Update this file as the project evolves.*
