@@ -7,6 +7,7 @@ import (
 	"os"
 	"encoding/json"
 	"html/template"
+	"time"
 )
 
 type Offer struct {
@@ -30,6 +31,19 @@ type PageVariables struct{
 	PageOffers []Offer
 }
 
+
+func healthCheck(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Content-Type", "application/json")
+    	w.WriteHeader(http.StatusOK)
+    
+   	 response := map[string]string{
+        	"status": "healthy",
+        	"service": "job-listing-app",
+        	"timestamp": time.Now().Format(time.RFC3339),
+    	}
+    
+    	json.NewEncoder(w).Encode(response)
+}
 
 func data()(joboffers []Offer){
 	offerdata, err := os.Open("./data.json")
@@ -74,6 +88,7 @@ func home(w http.ResponseWriter, r *http.Request){
 
 func main(){
 	http.HandleFunc("/", getOffers)
+	http.HandleFunc("/health", healthCheck)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Println("Server is running on port: 8000")
 	log.Fatal(http.ListenAndServe(":8000", nil))
