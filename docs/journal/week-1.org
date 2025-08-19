@@ -7,10 +7,10 @@
 
 * 🎯 Week Objectives
 ** Technical Goals
-- [ ] Complete development environment configuration
-- [ ] Setup Git workflow with branches and tags
-- [ ] Containerization with Docker
-- [ ] Project documentation with DevOps standards
+- [x] Complete development environment configuration
+- [x] Setup Git workflow with branches and tags
+- [x] Containerization with Docker
+- [] Project documentation with DevOps standards
 
 ** Learning Goals  
 - [ ] Master advanced Git commands (tags, workflow)
@@ -53,28 +53,44 @@ aws sts get-caller-identity
 
 ** Tuesday 19/08 - Day 2
 *** 🎯 Daily Objectives
-- 
-- 
-- 
+- Docker container setup
+- Multi-stage build implementation
+- Health endpoint for monitoring
 
 *** ✅ Achievements
-- 
-- 
+- Created production-ready Dockerfile (28.8MB Alpine image)
+- Implemented /health endpoint with JSON response
+- Security hardening with non-root user
+- Successfully containerized Go application
+
 
 *** 🧠 Learning Points
-- 
-- 
+- Multi-stage Docker builds for Go applications
+- Container security best practices (non-root user)
+- Health check endpoints for production monitoring
+- Docker layer optimization with .dockerignore 
 
-*** 🔧 Important Commands
+*** 🔧 Important Commands Discovered
 #+BEGIN_SRC bash
-# To fill
+# Docker build and run
+docker build -t job-listing-app .
+docker run -d -p 8000:8000 --name app job-listing-app
+
+# Health check testing
+curl http://localhost:8000/health
+
+# Image size verification
+docker images | grep job-listing
+
+# New linux command 
+time 
+
 #+END_SRC
 
-*** 🤔 Questions/Challenges
-- 
-
-*** 📊 Metrics
-- 
+*** 📊 Day 2 Metrics
+- Image size: 28.8MB
+- Container startup: ~2-3 seconds
+- Health endpoint response: <100ms
 
 ** Wednesday 20/08 - Day 3
 *** 🎯 Daily Objectives
