@@ -94,26 +94,75 @@ time
 
 ** Wednesday 20/08 - Day 3
 *** 🎯 Daily Objectives
-- 
-- 
+- Docker Compose multi-service setup (App + Prometheus)
+- Environment configuration (dev/staging/prod variables)
+- Basic monitoring stack with Prometheus metrics
+- Volume management and networking between services
 
 *** ✅ Achievements
-- 
+- Project structure created (deployments/, monitoring/, configs/)
+- Docker Compose orchestration with app + Prometheus services
+- Metrics instrumentation in Go application
+- Full monitoring stack operational (App:8000 + Prometheus:9090)
+- Performance baseline established (~19.7ms average response time)
 
 *** 🧠 Learning Points
-- 
+- Docker Compose service discovery via internal DNS
+- Prometheus metrics types: Counter, Histogram with labels
+- Go prometheus/client_golang integration patterns
+- Volume mounting complexities and troubleshooting
+- Professional DevOps project structure conventions
 
-*** 🔧 Important Commands
+*** 🔧 Important Commands Discovered
 #+BEGIN_SRC bash
-# To fill
+# Project structure creation
+mkdir -p deployments monitoring configs
+
+# Docker Compose operations
+cd deployments
+docker compose up --build
+docker compose down
+
+# Go modules management
+go mod tidy
+go clean -modcache
+rm go.sum && go mod tidy
+
+# Testing endpoints
+curl http://localhost:8000/health
+curl http://localhost:8000/metrics
+
+# Vim search and replace
+:%s/data(/loadJobOffers(/g
+:set number
+
+# Debug specific lines
+sed -n '70,75p' main.go
+sed -n '83,87p' main.go
 #+END_SRC
 
-*** 🤔 Questions/Challenges
-- 
 
-*** 📊 Metrics
-- 
+*** 📊 Day 3 Metrics
+- Setup time: **180** minutes (including debugging)
+- Git commits: **1** (comprehensive infrastructure commit)
+- Docker services: **2** (app + prometheus)
+- Prometheus metrics implemented: **3** (requests, duration, jobs_displayed)
+- Performance baseline: **19.7ms** average response time
+- Documentation pages: **2** (docker-compose.yml + prometheus.yml)
 
+*** 🎯 Final Infrastructure Status
+- Application containerized and instrumented ✅
+- Multi-service orchestration operational ✅  
+- Business metrics collection active ✅
+- Monitoring dashboard accessible ✅
+- Volume persistence configured ✅
+- Service discovery functional ✅
+
+*** 💡 Key Insights for Future
+- Always test Go syntax locally before Docker builds
+- Volume mounting requires understanding container filesystem structure  
+- Prometheus metrics only appear after first application usage
+- Docker Compose dependency management crucial for service startup order
 ** Thursday 21/08 - Day 4
 *** 🎯 Daily Objectives
 - 
