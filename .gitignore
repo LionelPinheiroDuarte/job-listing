@@ -66,3 +66,9 @@ coverage.html
 
 # Air live reload tool
 tmp/
+
+# AWS and sensitive data
+*.tfvars
+.env
+*.pem
+*.key
