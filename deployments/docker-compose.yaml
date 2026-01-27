@@ -1,6 +1,6 @@
 services:
   app:
-    build: 
+    build:
       context: ..
       dockerfile: Dockerfile
     ports:
@@ -12,7 +12,15 @@ services:
     volumes:
       - ../data.json:/app/data.json:ro
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8000/health"]
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8000/health",
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -26,9 +34,9 @@ services:
       - ../monitoring:/opt/prometheus:ro
       - prometheus_data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.enable-lifecycle'
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
     user: root
     depends_on:
       - app
