@@ -68,7 +68,14 @@ coverage.html
 tmp/
 
 # AWS and sensitive data
-*.tfvars
 .env
 *.pem
 *.key
+
+
+# Terraform
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
