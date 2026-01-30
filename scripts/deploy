@@ -3,7 +3,7 @@
 set -e
 
 project_name="job-listing"
-
+repo_path="$HOME/${project_name}"
 
 # Update system
 sudo apt update
@@ -15,15 +15,15 @@ if ! command -v go &> /dev/null; then
 fi
 
 # Clone repository if not present
-if [ ! -d "$HOME/job-listing" ]; then
+if [ ! -d "$HOME/${project_name}" ]; then
     echo "📥 Cloning repository..."
     git clone https://github.com/LionelPinheiroDuarte/${project_name}.git
-    cd ${project_name}
+    cd ${repo_path}
     git fetch --all
     git switch dev
 else
     echo "📥 Updating repository..."
-    cd ${project_name}
+    cd ${repo_path}
     git pull
 fi
 
