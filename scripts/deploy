@@ -3,6 +3,7 @@
 set -e
 
 project_name="job-listing"
+project_port="8000"
 repo_path="$HOME/${project_name}"
 
 # Update system
@@ -50,8 +51,11 @@ fi
 sudo chown -R appuser:appuser /opt/${project_name}
 
 # Restart service
-echo "🔄 restarting service..."
-sudo systemctl restart ${project_name}
+echo "🔄 Restarting service..."
+sudo systemctl stop ${project_name} 2>/dev/null || true
+sleep 2  # Wait for port to be released
+sudo fuser -k ${project_port}/tcp 2>/dev/null || true  # Force kill if needed
+sudo systemctl start ${project_name}
 sudo systemctl enable ${project_name}
 
 # Check status
@@ -59,4 +63,4 @@ echo "✅ Deployment complete!"
 sudo systemctl status ${project_name} --no-pager
 
 echo ""
-echo "🌐 Application available at http://$(curl -s ifconfig.me):8000"
+echo "🌐 Application available at http://$(curl -s ifconfig.me):${project_port}"
