@@ -41,6 +41,8 @@ sudo cp index.html /opt/${project_name}/
 sudo cp -r static /opt/${project_name}/ 2>/dev/null || true
 sudo chmod +x /opt/${project_name}/main
 
+sudo cp ${repo_path}/config/job-listing.service /etc/systemd/system/${project_name}.service
+sudo systemctl daemon-reload
 
 # Create user if not exists
 if ! id appuser &> /dev/null; then
