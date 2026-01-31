@@ -1,4 +1,4 @@
-# 🚀 Talent Pipeline - DevOps Learning Journey
+# 🚀 Job-listing - DevOps Learning Journey
 
 [![Terraform](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
@@ -52,31 +52,31 @@ Traditional VM (Week 1)  →  Docker Compose (Week 2-5)  →  Kubernetes (Week 6
 │           Internet                      │
 │              ↓                          │
 │      AWS Security Group                 │
-│   (SSH: My IP | HTTP: Public)          │
+│   (SSH: My IP | HTTP: Public)           │
 │              ↓                          │
-│      ┌──────────────────┐              │
-│      │   EC2 Instance   │              │
-│      │   Ubuntu 22.04   │              │
-│      │                  │              │
-│      │  ┌────────────┐  │              │
-│      │  │   Nginx    │  │ :80         │
-│      │  │  (planned) │  │              │
-│      │  └─────┬──────┘  │              │
-│      │        ↓         │              │
-│      │  ┌────────────┐  │              │
-│      │  │  Go App    │  │ :8000       │
-│      │  │  (systemd) │  │              │
-│      │  └─────┬──────┘  │              │
-│      │        ↓         │              │
-│      │  ┌────────────┐  │              │
-│      │  │ PostgreSQL │  │ :5432       │
-│      │  │ (planned)  │  │              │
-│      │  └────────────┘  │              │
-│      └──────────────────┘              │
+│      ┌──────────────────┐               │
+│      │   EC2 Instance   │               │ 
+│      │   Ubuntu 22.04   │               │
+│      │                  │               │
+│      │  ┌────────────┐  │               │
+│      │  │   Nginx    │  │ :80           │
+│      │  │  (planned) │  │               │
+│      │  └─────┬──────┘  │               │
+│      │        ↓         │               │
+│      │  ┌────────────┐  │               │
+│      │  │  Go App    │  │ :8000         │ 
+│      │  │  (systemd) │  │               │
+│      │  └─────┬──────┘  │               │
+│      │        ↓         │               │
+│      │  ┌────────────┐  │               │
+│      │  │ PostgreSQL │  │ :5432         │
+│      │  │ (planned)  │  │               │
+│      │  └────────────┘  │               │
+│      └──────────────────┘               │
 │                                         │
-│  Provisioned: Terraform                │
-│  Deployed: Bash Script                 │
-│  Managed: systemd                      │
+│  Provisioned: Terraform                 │ 
+│  Deployed: Bash Script                  │
+│  Managed: systemd                       │
 └─────────────────────────────────────────┘
 ```
 
@@ -133,7 +133,7 @@ terraform apply
 
 # Deploy application
 ssh ubuntu@<instance-ip>
-curl -sSL https://raw.githubusercontent.com/LionelPinheiroDuarte/job-listing/dev/scripts/vm/deploy.sh | bash
+curl -sSL https://raw.githubusercontent.com/LionelPinheiroDuarte/job-listing/dev/scripts/deploy | bash
 
 # Verify
 curl http://<instance-ip>:8000/health
@@ -146,9 +146,9 @@ curl http://<instance-ip>:8000/health
 ## 📚 Learning Journey Documentation
 
 ### Phase 1: VM Traditional Deployment
-- **[Week 1 Retrospective](docs/phase1-vm/week1/Week1_Retrospective.md)** - Complete journey from manual to automated
-- **[Terraform Deployment](docs/phase1-vm/week1/Day2_Terraform.md)** - Infrastructure as Code implementation
-- **[Automation Script](docs/phase1-vm/week1/Day4_Automation.md)** - Building robust deployment automation
+- **[Week 1 Retrospective](docs/phase1/week1/Week1_Retrospective.md)** - Complete journey from manual to automated
+- **[Terraform Deployment](docs/phase1/week1/Day2_Terraform.md)** - Infrastructure as Code implementation
+- **[Automation Script](docs/phase1/week1/Day4_Automation.md)** - Building robust deployment automation
 
 ### Key Learnings
 1. **Why Containerization Matters**
@@ -240,23 +240,8 @@ To understand the *why* each tool exists, not just *how* to use it.
 
 ## 📞 Connect With Me
 
-- **LinkedIn:** [Lionel Pinheiro Duarte](https://linkedin.com/in/lionelpinheiroduarte)
-- **Portfolio:** [Portfolio](https://lionelpinheiroduarte.com)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- Inspired by real-world DevOps challenges
-- Built with guidance from DevOps best practices
-- Documented to help others learn the same journey
-
+- **LinkedIn:** [Lionel Pinheiro Duarte](https://linkedin.com/in/lionelpinheiro)
+- **Portfolio:** [website](https://lionelpinheiroduarte.com)
 ---
 
 <div align="center">
