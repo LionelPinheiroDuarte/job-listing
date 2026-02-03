@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: job-listing-app
     ports:
-      - "8000:8000"
+      - "${APP_PORT:-8000}:8000"
     environment:
       - PORT=8000
       - LOG_LEVEL=${LOG_LEVEL:-info}
@@ -27,26 +27,10 @@ services:
       retries: 3
       start_period: 40s
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          cpus: "0.5"
-          memory: 512M
-        reservations:
-          cpus: "0.25"
-          memory: 256M
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
-    networks: # ← Référence aux networks (juste le nom)
+    networks:
       - app-network
       - monitoring-network
-    labels:
-      com.job-listing.service: "backend"
-      com.job-listing.version: "1.0.0"
-
+    
   prometheus:
     image: prom/prometheus:latest
     container_name: job-listing-prometheus
@@ -62,28 +46,13 @@ services:
       - "--storage.tsdb.retention.time=15d"
     user: "nobody"
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          cpus: "0.3"
-          memory: 512M
-        reservations:
-          cpus: "0.1"
-          memory: 256M
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
-    networks: # ← Référence aux networks (juste le nom)
+    networks:
       - monitoring-network
     depends_on:
       app:
         condition: service_healthy
-    labels:
-      com.job-listing.service: "monitoring"
-
-networks: # ← DÉFINITION des networks (niveau racine)
+    
+networks: 
   app-network:
     driver: bridge
     name: job-listing-app
@@ -91,6 +60,6 @@ networks: # ← DÉFINITION des networks (niveau racine)
     driver: bridge
     name: job-listing-monitoring
 
-volumes: # ← Niveau racine aussi
+volumes:
   prometheus_data:
     name: job-listing-prometheus-data

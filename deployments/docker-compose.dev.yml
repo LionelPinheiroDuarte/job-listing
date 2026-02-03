@@ -1,0 +1,49 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=debug
+      - DEBUG=true
+    volumes:
+      # ← AJOUTÉ: Sync code pour hot-reload (optionnel si Go)
+      - ../:/app:cached # Code source
+      - /app/vendor # Exclude vendor
+    # ← AJOUTÉ: Pas de limites strictes en dev
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+    # ← AJOUTÉ: Logs sans rotation (tout garder)
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"
+    labels:
+      com.job-listing.environment: "development"
+      com.job-listing.hot-reload: "enabled"
+
+  prometheus:
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
+      - "--storage.tsdb.retention.time=7d"
+      - "--log.level=debug"
+    # ← AJOUTÉ: Limites généreuses
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+    labels:
+      com.job-listing.environment: "development"
