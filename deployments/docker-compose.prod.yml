@@ -25,7 +25,6 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-    # ← Security hardening
     security_opt:
       - no-new-privileges:true
     read_only: true
@@ -34,6 +33,30 @@ services:
     labels:
       com.job-listing.environment: "production"
       com.job-listing.version: "1.0.0"
+
+  postgres:
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=none"
+      - "-c"
+      - "max_connections=100"
+      - "-c"
+      - "shared_buffers=256MB"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      com.job-listing.environment: "production"
 
   prometheus:
     command:

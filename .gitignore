@@ -79,3 +79,8 @@ tmp/
 .terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
+
+# Database backups (never commit)
+backups/
+*.sql
+*.sql.gz

@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: job-listing-app
     ports:
-      - "${APP_PORT:-8000}:8000"
+      - "8000:8000"
     environment:
       - PORT=8000
       - LOG_LEVEL=${LOG_LEVEL:-info}
@@ -27,34 +27,26 @@ services:
       retries: 3
       start_period: 40s
     restart: unless-stopped
-    networks:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks: # ← Référence aux networks (juste le nom)
       - app-network
       - monitoring-network
-  postgres:
-    image: postgres:15-alpine
-    container_name: job-listing-postgres
-    ports:
-      - "${POSTGRES_PORT:-5432}:5432"
-    environment:
-      - POSTGRES_DB=${POSTGRES_DB:-jobdb}
-      - POSTGRES_USER=${POSTGRES_USER:-jobuser}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-jobpassword}
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "pg_isready -U ${POSTGRES_USER:-jobuser} -d ${POSTGRES_DB:-jobdb}",
-        ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
-    restart: unless-stopped
-    networks:
-      - app-network
     labels:
-      com.job-listing.service: "database"
+      com.job-listing.service: "backend"
+      com.job-listing.version: "1.0.0"
+
   prometheus:
     image: prom/prometheus:latest
     container_name: job-listing-prometheus
@@ -70,13 +62,28 @@ services:
       - "--storage.tsdb.retention.time=15d"
     user: "nobody"
     restart: unless-stopped
-    networks:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 512M
+        reservations:
+          cpus: "0.1"
+          memory: 256M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks: # ← Référence aux networks (juste le nom)
       - monitoring-network
     depends_on:
       app:
         condition: service_healthy
+    labels:
+      com.job-listing.service: "monitoring"
 
-networks:
+networks: # ← DÉFINITION des networks (niveau racine)
   app-network:
     driver: bridge
     name: job-listing-app
@@ -84,8 +91,6 @@ networks:
     driver: bridge
     name: job-listing-monitoring
 
-volumes:
+volumes: # ← Niveau racine aussi
   prometheus_data:
     name: job-listing-prometheus-data
-  postgres_data:
-    name: postgres_data:/var/lib/postgresql/data
