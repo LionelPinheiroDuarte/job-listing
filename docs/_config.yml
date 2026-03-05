@@ -1,6 +1,6 @@
 title: "Job Listing — DevOps Pipeline"
 description: "12-week DevOps project documenting a production-grade pipeline"
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 url: "https://lionelpinheiroduarte.github.io"
 baseurl: "/job-listing"
