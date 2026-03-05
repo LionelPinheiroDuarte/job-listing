@@ -1,3 +1,10 @@
+---
+title: Day 1 - Phase 1 Setup
+parent: Week 1
+grand_parent: Phase 1
+nav_order: 1
+---
+
 # Day 1 Checklist - Phase 1 Setup
 
 **Status:** ✅ Completed

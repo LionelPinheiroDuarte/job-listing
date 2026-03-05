@@ -1,3 +1,10 @@
+---
+title: Day 2 - First EC2 Deployment with Terraform
+parent: Week 1
+grand_parent: Phase 1
+nav_order: 2
+---
+
 # Day 2 - First EC2 Deployment with Terraform
 
 ---
