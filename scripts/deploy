@@ -1,0 +1,68 @@
+#!/bin/bash
+
+set -e
+
+project_name="job-listing"
+project_port="8000"
+repo_path="$HOME/${project_name}"
+
+# Update system
+sudo apt update
+
+# Install go
+if ! command -v go &> /dev/null; then
+    echo "📦 Installing Go..."
+    sudo snap install go --classic
+fi
+
+# Clone repository if not present
+if [ ! -d "$HOME/${project_name}" ]; then
+    echo "📥 Cloning repository..."
+    git clone https://github.com/LionelPinheiroDuarte/${project_name}.git
+    cd ${repo_path}
+    git fetch --all
+    git switch dev
+else
+    echo "📥 Updating repository..."
+    cd ${repo_path}
+    git pull
+fi
+
+# Build application
+echo "🔨 Building application..."
+go build -o main
+
+# Setup deployment directory
+echo "📂 Setting up /opt/${project_name}..."
+sudo mkdir -p /opt/${project_name}
+sudo cp main /opt/${project_name}/
+sudo cp data.json /opt/${project_name}/
+sudo cp index.html /opt/${project_name}/
+sudo cp -r static /opt/${project_name}/ 2>/dev/null || true
+sudo chmod +x /opt/${project_name}/main
+
+sudo cp ${repo_path}/config/job-listing.service /etc/systemd/system/${project_name}.service
+sudo systemctl daemon-reload
+
+# Create user if not exists
+if ! id appuser &> /dev/null; then
+    echo "👤 Creating appuser..."
+    sudo useradd -r -s /bin/false appuser
+fi
+
+sudo chown -R appuser:appuser /opt/${project_name}
+
+# Restart service
+echo "🔄 Restarting service..."
+sudo systemctl stop ${project_name} 2>/dev/null || true
+sleep 2  # Wait for port to be released
+sudo fuser -k ${project_port}/tcp 2>/dev/null || true  # Force kill if needed
+sudo systemctl start ${project_name}
+sudo systemctl enable ${project_name}
+
+# Check status
+echo "✅ Deployment complete!"
+sudo systemctl status ${project_name} --no-pager
+
+echo ""
+echo "🌐 Application available at http://$(curl -s ifconfig.me):${project_port}"

@@ -1,0 +1,25 @@
+title: "Job Listing — DevOps Pipeline"
+description: "12-week DevOps project documenting a production-grade pipeline"
+theme: just-the-docs
+
+url: "https://lionelpinheiroduarte.github.io"
+baseurl: "/job-listing"
+
+# Just the Docs configuration
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "GitHub Repository":
+    - "https://github.com/LionelPinheiroDuarte/job-listing"
+
+nav_sort: case_insensitive
+
+callouts_level: quiet
+callouts:
+  note:
+    color: blue
+  warning:
+    color: yellow
+
+footer_content: "Job Listing DevOps Pipeline — Lionel Pinheiro Duarte"
